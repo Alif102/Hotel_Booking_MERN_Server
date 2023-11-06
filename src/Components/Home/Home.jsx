@@ -1,7 +1,10 @@
+import SpecialOffer from "./SpecialOffer"
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <SpecialOffer/>
+    </div>
   )
 }
 

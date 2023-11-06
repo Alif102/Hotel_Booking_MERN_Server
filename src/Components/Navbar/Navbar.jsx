@@ -4,9 +4,8 @@ import UseAuth from "../Hooks/UseAuth";
 import { useEffect, useState } from "react";
 import {BsSun} from 'react-icons/bs'
 import {HiOutlineMoon} from 'react-icons/hi'
-// import UseAuth from "../Hooks/UseAuth";
 
-
+ 
 const Navbar = () => {
 
   const [theme, setTheme] = useState(
