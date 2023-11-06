@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600&family=Young+Serif&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+.yongSerif{
+    font-family: 'Young Serif', serif;
+}
+
+.robotoMono{
+    font-family: 'Roboto Mono', monospace;
+}

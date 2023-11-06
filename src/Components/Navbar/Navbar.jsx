@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import { Link, NavLink } from "react-router-dom"
-import UseAuth from "../Hooks/UseAuth";
+// import UseAuth from "../Hooks/UseAuth";
 import { useEffect, useState } from "react";
 import {BsSun} from 'react-icons/bs'
 import {HiOutlineMoon} from 'react-icons/hi'
-
+import UseAuth from "../../Hooks/UseAuth";
+ 
  
 const Navbar = () => {
 
@@ -38,11 +39,11 @@ const Navbar = () => {
     const navLinks =  <>
     <li><NavLink to="/">Home</NavLink></li>
     {/* <li><NavLink to="/update">Update Product</NavLink></li> */}
-    <li><NavLink to="/myCart">My Cart</NavLink></li>
+    <li><NavLink to="/rooms">Rooms</NavLink></li>
 
     {/* <li><NavLink to="/showProduct">Show Product</NavLink></li> */}
 
-    <li><NavLink to='/add-products'>Add Products</NavLink></li>
+    <li><NavLink to='/booking-rooms'>Booking Rooms</NavLink></li>
     </>
   return (
     <div data-theme="dark">
