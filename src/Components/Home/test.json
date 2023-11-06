@@ -1,0 +1,36 @@
+
+[
+  {
+    "name": "single room",
+    "imageurls": [
+      "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg",
+      "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg",
+      "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg"
+    ],
+    "rentperday": 300,
+    "maxcount" : 3,
+    "phonenumber" : 17,
+    "desc" : "nothing",
+    "currentbookings":[
+
+    ]
+ 
+  },
+  {
+    "name": "double room",
+    "imageurls": [
+      "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg",
+      "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg",
+      "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg"
+    ],
+    "rentperday": 300,
+    "maxcount" : 3,
+    "phonenumber" : 17,
+    "desc" : "nothing",
+    "currentbookings":[
+
+    ]
+ 
+  }
+
+]
