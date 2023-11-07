@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react"
-import RoomCard from "./RoomCard";
+// import RoomCard from "./RoomCard";
+import {BiBed} from 'react-icons/bi'
+import {HiUserGroup} from 'react-icons/hi'
+import PriceFilter from "../../Test/PriceFilter";
 // import RoomList from "./RoomList";
 
 const Rooms = () => {
@@ -12,19 +15,54 @@ const Rooms = () => {
     .catch(error => console.error(error))
 },[])
 
- 
+const [priceRange, setPriceRange] = useState({ min: 0, max: 1000 });
+
+// Function to handle price range changes
+const handlePriceRangeChange = (min, max) => {
+  setPriceRange({ min, max });
+};
+const filteredRooms = rooms.filter(
+  (room) => room.rentperday >= priceRange.min && room.rentperday <= priceRange.max
+);
 
  
   return (
     <div>
+      <div>
+      <h2 className="text-3xl text-center mt-10 yongSerif m-5">Available Rooms</h2>
+
+      <PriceFilter onPriceChange={handlePriceRangeChange} />
+      <div className="grid max-w-[1000px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-md mb-12 gap-7">
+        {filteredRooms.map((room) => (
+
+          <div key={room._id} >
+          <div   className="card w-[270px] bg-base-100 shadow-xl">
+
+            <figure><img src={room.image} alt="img" /></figure>
+  <div className="card-body">
+    <p> <span className='font-bold text-cyan-400'>${room.rentperday}</span> / Per Night</p>
+    <h2 className="card-title text-cyan-400">{room.name} </h2>
+    <div className='flex items-center'>
+    <p className='flex items-center'><BiBed/> {}</p>
+    <p className='flex items-center'><HiUserGroup/> {}</p>
+    </div>
+    <div className="card-actions">
+      <button className="btn btn-accent">Book Now</button>
+    </div>
+  </div>
+
+          </div> 
+          </div>
+        ))}
+      </div>
+    </div>
         
-        <h2 className="text-3xl text-center mt-10 yongSerif m-5">Our Featured Rooms</h2>
-        <div className="grid max-w-[1000px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-md mb-12 gap-7">
+        {/* <div className="grid max-w-[1000px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-md mb-12 gap-7">
             {
                 rooms.map((room)=> <RoomCard key={room._id} 
                 room={room}></RoomCard> )
             }
-        </div>
+        </div> */}
     </div>
   )
 }
