@@ -2,8 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 // import UseAuth from "./Hooks/UseAuth";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import SocialLogin from "./SocialLogin";
 import UseAuth from "../../Hooks/UseAuth";
+import SocialLogin from "./SocialLogin";
 
 const Register = () => {
   const navigate = useNavigate();
