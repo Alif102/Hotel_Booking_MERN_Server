@@ -6,6 +6,7 @@ import Root from './Root.jsx'
 import Home from './Components/Home/Home.jsx'
 import Rooms from './Components/Rooms/Rooms.jsx'
 import AuthProvider from './Provider/AuthProvider.jsx'
+import RoomDetails from './Components/Rooms/RoomDetails.jsx'
 
 
 
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
       {
         path: '/rooms',
         element: <Rooms/>
+      },
+      {
+        path: '/detail/:_id',
+        element: <RoomDetails/>,
+        loader: ({params})=> fetch(`http://localhost:5000/rooms/${params._id}`)
       }
     ]
   }

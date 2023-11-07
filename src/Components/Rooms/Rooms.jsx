@@ -40,9 +40,8 @@ const filteredRooms = rooms.filter(
           <div   className="card w-[270px] bg-base-100 shadow-xl">
            
            
-          <Link to={`/detail/${room._id}`}>
 
-            <figure><img src={room.image} alt="img" /></figure> </Link>
+            <figure><img src={room.image} alt="img" /></figure>
   <div className="card-body">
     <p> <span className='font-bold text-cyan-400'>${room.rentperday}</span> / Per Night</p>
     <h2 className="card-title text-cyan-400">{room.name} </h2>
