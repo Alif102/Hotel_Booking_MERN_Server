@@ -60,7 +60,7 @@ const Navbar = () => {
       </ul>
     </div>
     {/* <a className="btn btn-ghost normal-case text-xl">Moscow Mashuka</a> */}
-    <img className="w-[130px] ml-7" src="https://i.ibb.co/CHB0nDB/logo2.png" alt="Logo" />
+    <img className="w-[130px] ml-7" src="https://hotelina-nextjs.vercel.app/assets/images/header-logo2.svg" alt="Logo" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

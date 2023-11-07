@@ -10,7 +10,7 @@ function PriceFilter({ onPriceChange }) {
   };
 
   return (
-    <div>
+    <div className='text-center space-y-3 mb-7'>
       <h2>Price Range Filter</h2>
       <label>
         Min Price:
@@ -28,7 +28,7 @@ function PriceFilter({ onPriceChange }) {
           onChange={(e) => setMaxPrice(Number(e.target.value))}
         />
       </label>
-      <button onClick={handleFilterChange}>Apply Filter</button>
+      <button className='btn bg-[cyan]' onClick={handleFilterChange}>Apply Filter</button>
     </div>
   );
 }

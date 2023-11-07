@@ -1,9 +1,11 @@
-import SpecialOffer from "./SpecialOffer"
+import Banner from "./Banner"
+// import SpecialOffer from "./SpecialOffer"
 
 const Home = () => {
   return (
     <div>
-      <SpecialOffer/>
+      <Banner/>
+            {/* <SpecialOffer/> */}
     </div>
   )
 }
