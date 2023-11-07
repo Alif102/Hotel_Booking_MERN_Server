@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 // import RoomCard from "./RoomCard";
-import {BiBed} from 'react-icons/bi'
-import {HiUserGroup} from 'react-icons/hi'
+ import {Link} from 'react-router-dom'
+
 import PriceFilter from "../../Test/PriceFilter";
 // import RoomList from "./RoomList";
 
@@ -34,27 +34,30 @@ const filteredRooms = rooms.filter(
       <PriceFilter onPriceChange={handlePriceRangeChange} />
       <div className="grid max-w-[1000px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-md mb-12 gap-7">
         {filteredRooms.map((room) => (
-
           <div key={room._id} >
-          <div   className="card w-[270px] bg-base-100 shadow-xl">
+                         <Link to={`/detail/${room._id}`}>
 
-            <figure><img src={room.image} alt="img" /></figure>
+          <div   className="card w-[270px] bg-base-100 shadow-xl">
+           
+           
+          <Link to={`/detail/${room._id}`}>
+
+            <figure><img src={room.image} alt="img" /></figure> </Link>
   <div className="card-body">
     <p> <span className='font-bold text-cyan-400'>${room.rentperday}</span> / Per Night</p>
     <h2 className="card-title text-cyan-400">{room.name} </h2>
-    <div className='flex items-center'>
-    <p className='flex items-center'><BiBed/> {}</p>
-    <p className='flex items-center'><HiUserGroup/> {}</p>
-    </div>
-    <div className="card-actions">
-      <button className="btn btn-accent">Book Now</button>
+    
+    <div className="card-actions"> 
+    <button className="btn btn-accent">View Details</button>
+
+  
     </div>
   </div>
 
-          </div> 
+          </div>  </Link>
           </div>
         ))}
-      </div>
+      </div> 
     </div>
         
         {/* <div className="grid max-w-[1000px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-md mb-12 gap-7">
