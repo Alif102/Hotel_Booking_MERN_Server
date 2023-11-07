@@ -16,6 +16,19 @@ const FilterBar = () => {
         value={minPrice}
         onChange={(e) => setMinPrice(e.target.value)}
       />
+
+<div className="form-control">
+          <label className="label">
+            <span className="label-text">Min Pricee</span>
+          </label>
+          <input className="input input-bordered" type="number" 
+          value={minPrice}
+          onChange={(e) => setMinPrice(e.target.value)}
+           />
+          
+        </div>
+
+
       <input
         type="number"
         placeholder="Max Price"

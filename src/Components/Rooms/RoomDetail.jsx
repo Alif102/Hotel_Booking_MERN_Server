@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 
 const RoomDetail = ({details}) => {
-    const {name , displayImagesOne,displayImagesTwo,displayImagesThree, rentperday} = details 
+    const {name ,desc, displayImagesOne,displayImagesTwo,displayImagesThree, rentperday} = details 
   return (
-    <div>
+    <div className="max-w-[1000px] mx-auto">
          {/* <div   className="card w-[270px] bg-base-100 shadow-xl">
            
            
@@ -26,11 +26,11 @@ const RoomDetail = ({details}) => {
 
 
 
-         <div className="carousel w-full">
+         <div className="carousel">
   <div id="slide1" className="carousel-item relative w-full">
     <img src={displayImagesOne} className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide4" className="btn btn-circle">❮</a> 
+      <a href="#slide3" className="btn btn-circle">❮</a> 
       <a href="#slide2" className="btn btn-circle">❯</a>
     </div>
   </div> 
@@ -45,16 +45,10 @@ const RoomDetail = ({details}) => {
     <img src={displayImagesThree} className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide2" className="btn btn-circle">❮</a> 
-      <a href="#slide4" className="btn btn-circle">❯</a>
-    </div>
-  </div> 
-  <div id="slide4" className="carousel-item relative w-full">
-    <img src="/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide3" className="btn btn-circle">❮</a> 
       <a href="#slide1" className="btn btn-circle">❯</a>
     </div>
-  </div>
+  </div> 
+  
 </div>
 
 
@@ -64,9 +58,10 @@ const RoomDetail = ({details}) => {
   
   <div className="card-body">
     <h2 className="card-title">{name}</h2>
-    <p>{rentperday}</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Book Now</button>
+    <p> <span className="font-bold text-2xl text-cyan-600">${rentperday}</span> / Per Night</p>
+    <p className=" w-3/4 text-gray-500">{desc}</p>
+    <div className="card-actions justify-center">
+      <button className="btn btn-primary justify-center">Book Now</button>
     </div>
   </div>
 </div>
