@@ -9,6 +9,8 @@ import AuthProvider from './Provider/AuthProvider.jsx'
 import RoomDetails from './Components/Rooms/RoomDetails.jsx'
 import Login from './Components/Login/Login.jsx'
 import Register from './Components/Register/Register.jsx'
+import ErrorPage from './ErrorPage.jsx'
+import MyBooking from './Components/Bookings/MyBooking.jsx'
 
 
 
@@ -16,6 +18,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Root/>,
+    errorElement : <ErrorPage/>,
     children: [
       {
         path: '/',
@@ -29,6 +32,11 @@ const router = createBrowserRouter([
         path: '/detail/:_id',
         element: <RoomDetails/>,
         loader: ({params})=> fetch(`http://localhost:5000/rooms/${params._id}`)
+      },
+      {
+        path: '/bookings',
+        element: <MyBooking/>,
+        loader: ()=> fetch('http://localhost:5000/bookings')
       },
       {
         path: '/login',
