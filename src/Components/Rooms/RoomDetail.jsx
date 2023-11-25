@@ -1,8 +1,36 @@
 /* eslint-disable react/prop-types */
-import {Link} from 'react-router-dom'
-
+import Swal from 'sweetalert2';
+import UseAuth from '../../Hooks/UseAuth';
 const RoomDetail = ({details}) => {
-    const {_id,name ,desc, displayImagesOne,displayImagesTwo,displayImagesThree, rentperday} = details 
+  let {user} = UseAuth();
+    const {name ,desc,size, displayImagesOne,displayImagesTwo,displayImagesThree, rentperday} = details;
+
+  const handleBookings = ()=>{
+    fetch('https://backend-nine-liart.vercel.app/bookings', {
+    method: 'POST',
+    headers:{
+      'content-type': 'application/json'
+    }, 
+    body : JSON.stringify({details, email: user.email })  
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    if(data.insertedId){
+       Swal.fire({
+        title: 'Success!',
+        text: 'Room Booking Successfully',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
+    }
+  })
+  // You can handle form submission logic here, e.g., sending data to the server.
+  console.log('Form data submitted:', details);
+  }
+  
+
+    
   return (
     <div className="max-w-[1000px] mx-auto">
          
@@ -43,12 +71,15 @@ const RoomDetail = ({details}) => {
   
   <div className="card-body">
     <h2 className="card-title">{name}</h2>
+    <p className='text-gray-500'>Around {size} square feet</p>
     <p> <span className="font-bold text-2xl text-cyan-600">${rentperday}</span> / Per Night</p>
     <p className=" w-3/4 text-gray-500">{desc}</p>
     <div className="card-actions justify-center">
-    <Link to={`/myCart/${_id}`}>
-      <button className="btn btn-primary justify-center">Book Now</button>
-      </Link>
+    
+      <button 
+      onClick={handleBookings}
+     className="btn btn-primary justify-center">Book Now</button>
+  
     </div>
   </div>
 </div>

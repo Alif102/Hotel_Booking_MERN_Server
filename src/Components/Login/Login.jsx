@@ -1,6 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import UseAuth from "../../Hooks/UseAuth";
 import SocialLogin from "../Register/SocialLogin";
+import { Helmet } from "react-helmet";
 
  
 const Login = () => {
@@ -31,6 +32,10 @@ const Login = () => {
 
   return (
     <div >
+      <Helmet>
+        <title>Login - Hotel Room Booking</title>
+        <meta name="description" content="This is Home" />
+      </Helmet>
       <h1 className="text-2xl text-center ">Please Login </h1>
       <form onSubmit={HandleLogin}
        className="card-body md:w-3/4 lg:w-1/2 mx-auto ">

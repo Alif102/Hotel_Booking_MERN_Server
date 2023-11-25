@@ -1,15 +1,20 @@
 import { useEffect, useState } from "react"
 // import RoomCard from "./RoomCard";
  import {Link} from 'react-router-dom'
-
+ import { DatePicker, Space } from 'antd';
+//  import "antd/dist/antd.css";
+ const { RangePicker } = DatePicker;
 import PriceFilter from "../../Test/PriceFilter";
+import { Helmet } from "react-helmet";
 // import RoomList from "./RoomList";
 
 const Rooms = () => {
   const [rooms,setRooms] = useState([]);
+ 
+  
 
   useEffect(()=> { 
-    fetch('http://localhost:5000/rooms')
+    fetch('https://backend-nine-liart.vercel.app/rooms')
     .then((res)=> res.json())
     .then((data)=> setRooms(data))
     .catch(error => console.error(error))
@@ -25,12 +30,21 @@ const filteredRooms = rooms.filter(
   (room) => room.rentperday >= priceRange.min && room.rentperday <= priceRange.max
 );
 
+
  
   return (
     <div>
+      <Helmet>
+        <title>Rooms</title>
+        <meta name="description" content="This is Home" />
+      </Helmet>
       <div>
       <h2 className="text-3xl text-center mt-10 yongSerif m-5">Available Rooms</h2>
-
+   <div className="flex flex-col gap-1 justify-center mb-5 text-center">
+   <h2 className="font-semibold">Select Date For Room Booking</h2> 
+     <Space className=" font-bold" direction="vertical" size={12}>  <RangePicker format='DD-MM-YYYY' /> </Space>
+     
+   </div>
       <PriceFilter onPriceChange={handlePriceRangeChange} />
       <div className="grid max-w-[1000px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-md mb-12 gap-7">
         {filteredRooms.map((room) => (

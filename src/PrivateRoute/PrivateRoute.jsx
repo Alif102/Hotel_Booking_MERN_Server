@@ -15,7 +15,7 @@ const PrivateRoute = ({children}) => {
              
         }
     
-        if (user) 
+       if (user) 
         {
             return children
             
@@ -25,4 +25,4 @@ const PrivateRoute = ({children}) => {
   
 }
 
-export default PrivateRoute
+export default PrivateRoute 

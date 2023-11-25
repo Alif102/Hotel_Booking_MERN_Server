@@ -43,7 +43,7 @@ const Navbar = () => {
 
     {/* <li><NavLink to="/showProduct">Show Product</NavLink></li> */}
 
-    <li><NavLink to='/booking-rooms'>Booking Rooms</NavLink></li>
+    <li><NavLink to='/bookings'>My Bookings</NavLink></li>
     </>
   return (
     <div data-theme="dark">

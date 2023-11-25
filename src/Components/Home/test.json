@@ -1,25 +1,30 @@
 
 [
+  
+
   {
     "name": "Family room",
-    "imageurls": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww",
-    "rentperday": 300,
-    "maxcount" : 3,
+    "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D", 
+     "rentperday": 450,
+    "maxcount" : 4, 
+    "size" : 450,
     
     "desc" : "All our guestrooms are elegantly furnished with handmade furniture include luxury en-suite facilities with complimentary amenities pack, flat screen LCD TV, tea/coffee making facilities, fan, hairdryer and the finest pure white linen and towels.",
-    "displayImagesOne" : "https://plus.unsplash.com/premium_photo-1682125907963-422dd79e0a38?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG90ZWwlMjBpbnRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D",
-    "displayImagesTwo" : "https://images.unsplash.com/photo-1621293954908-907159247fc8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWwlMjBpbnRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D",
-    "displayImagesThree" : "https://images.unsplash.com/photo-1602081115720-72e5b0a254b8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvdGVsJTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D",
+    "displayImagesOne" : "https://plus.unsplash.com/premium_photo-1663126298656-33616be83c32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fHww",
+    "displayImagesTwo" : "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWwlMjByb29tfGVufDB8fDB8fHww",
+    "displayImagesThree" : "https://images.unsplash.com/photo-1615873968403-89e068629265?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxpdmluZyUyMHJvb20lMjBpbnRlcmlvciUyMGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D",
     "currentbookings":[
 
     ]
  
   },
+
   {
     "name": "Double room",
     "image": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWwlMjByb29tfGVufDB8fDB8fHww", 
      "rentperday": 300,
-    "maxcount" : 3,
+    "maxcount" : 3, 
+    "size" : 450,
     
     "desc" : "As our smallest budget rooms, the Compact bedrooms are suited for single occupancy or short-stay double occupancy as they have limited space and storage.",
     "displayImagesOne" : "https://plus.unsplash.com/premium_photo-1663126298656-33616be83c32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fHww",
@@ -36,7 +41,7 @@
     "image": "https://myindianthings.com/cdn/shop/articles/unnamed_-_2022-08-17T120719.112_1024x.jpg?v=1660718558",
     "rentperday": 300,
     "maxcount" : 3,
-    
+    "size" : 470,
     "displayImagesOne" : "https://images.unsplash.com/photo-1602081115720-72e5b0a254b8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvdGVsJTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D",
     "displayImagesTwo" : "https://images.unsplash.com/photo-1615873968403-89e068629265?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxpdmluZyUyMHJvb20lMjBpbnRlcmlvciUyMGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D",
     "displayImagesThree" : "https://images.unsplash.com/photo-1615529179035-e760f6a2dcee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGl2aW5nJTIwcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fHww",
@@ -55,7 +60,7 @@
     "displayImagesTwo" : "https://images.unsplash.com/photo-1615529179035-e760f6a2dcee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGl2aW5nJTIwcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fHww",
     "displayImagesThree" : "https://images.unsplash.com/photo-1609766857120-0183863c7971?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxpdmluZyUyMHJvb20lMjBpbnRlcmlvciUyMGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D",
     "maxcount" : 3,
-    
+    "size" : 290,
     "desc" : "Our Deluxe Twin/Large Double also provides views over landscaped gardens. It has a seating area, digital safe and mini fridge. This room can be configured with either 2 single beds or zip and linked to provide a large double bed.",
     "currentbookings":[
 
@@ -71,7 +76,7 @@
     "displayImagesTwo" : "https://images.unsplash.com/photo-1615529179035-e760f6a2dcee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGl2aW5nJTIwcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fHww",
     "displayImagesThree" : "https://images.unsplash.com/photo-1602081115720-72e5b0a254b8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvdGVsJTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D",
     "maxcount" : 3,
-    
+    "size" : 260,
     "desc" : "Our Deluxe king size room has a seating area, ample storage, digital safe and mini fridge. This room can also be configured with an extra roll-away bed for families of 3.",
     "currentbookings":[
 
@@ -84,7 +89,7 @@
     "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D",
     "rentperday": 300,
     "maxcount" : 3,
-    
+    "size" : 370,
     "desc" : "Lovely clean and fairly spacious room with four poster bed, and large shower in the ensuite. Very comfortable bed.",
     "displayImagesOne" : "https://images.unsplash.com/photo-1609766857120-0183863c7971?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxpdmluZyUyMHJvb20lMjBpbnRlcmlvciUyMGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D",
     "displayImagesTwo" : "https://images.unsplash.com/photo-1615529179035-e760f6a2dcee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGl2aW5nJTIwcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fHww",
