@@ -1,43 +1,32 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
-import { imageUpload } from '../../api/utils'
-import { toast } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import { TbFidgetSpinner } from 'react-icons/tb'
 import UseAuth from '../../Hooks/UseAuth'
-import {  getToken, saveUser } from '../../api/Auth'
+import {  saveUser } from '../../api/Auth'
 
-const SignUp = () => {
-  const { createUser, updateUserProfile, signInWithGoogle, loading } = UseAuth()
+const SignIn = () => {
+  const { signIn, signInWithGoogle, loading } = UseAuth()
   const navigate = useNavigate()
+  const location = useLocation()
+  const from = location?.state?.from?.pathname || '/'
+
   // form submit handler
   const handleSubmit = async event => {
     event.preventDefault()
     const form = event.target
-    const name = form.name.value
     const email = form.email.value
     const password = form.password.value
-    const image = form.image.files[0]
 
     try {
-      //1. Upload Image
-      const imageData = await imageUpload(image)
-
-      //2. User Registration
-      const result = await createUser(email, password)
-
-      //3. Save username & profile photo
-      await updateUserProfile(name, imageData?.data?.display_url)
+      //2. User Login
+      const result = await signIn(email, password)
       console.log(result)
-
-      //4. save user data in database
-      const dbResponse = await saveUser(result?.user)
-      console.log(dbResponse)
-      // result.user.email
-
       //5. get token
-      await getToken(result?.user?.email)
-      navigate('/')
-      toast.success('Signup Successful')
+      // await getToken(result?.user?.email)
+
+      navigate(from, { replace: true })
+      toast.success('Login Successful')
     } catch (err) {
       console.log(err)
       toast.error(err?.message)
@@ -55,9 +44,9 @@ const SignUp = () => {
       console.log(dbResponse)
 
       //5. get token
-      await getToken(result?.user?.email)
-      navigate('/')
-      toast.success('Signup Successful')
+      // await getToken(result?.user?.email)
+      navigate(from, { replace: true })
+      toast.success('Login Successful')
     } catch (err) {
       console.log(err)
       toast.error(err?.message)
@@ -67,8 +56,10 @@ const SignUp = () => {
     <div className='flex justify-center items-center min-h-screen'>
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
         <div className='mb-8 text-center'>
-          <h1 className='my-3 text-4xl font-bold'>Sign Up</h1>
-          <p className='text-sm text-gray-400'>Welcome to StayVista</p>
+          <h1 className='my-3 text-4xl font-bold'>Log In</h1>
+          <p className='text-sm text-gray-400'>
+            Sign in to access your account
+          </p>
         </div>
         <form
           onSubmit={handleSubmit}
@@ -77,31 +68,6 @@ const SignUp = () => {
           className='space-y-6 ng-untouched ng-pristine ng-valid'
         >
           <div className='space-y-4'>
-            <div>
-              <label htmlFor='email' className='block mb-2 text-sm'>
-                Name
-              </label>
-              <input
-                type='text'
-                name='name'
-                id='name'
-                placeholder='Enter Your Name Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
-                data-temp-mail-org='0'
-              />
-            </div>
-           <div>
-              <label htmlFor='image' className='block mb-2 text-sm'>
-                Select Image:
-              </label>
-              <input
-                required
-                type='file'
-                id='image'
-                name='image'
-                accept='image/*'
-              />
-            </div>
             <div>
               <label htmlFor='email' className='block mb-2 text-sm'>
                 Email address
@@ -125,7 +91,7 @@ const SignUp = () => {
               <input
                 type='password'
                 name='password'
-                autoComplete='new-password'
+                autoComplete='current-password'
                 id='password'
                 required
                 placeholder='*******'
@@ -147,10 +113,15 @@ const SignUp = () => {
             </button>
           </div>
         </form>
+        <div className='space-y-1'>
+          <button className='text-xs hover:underline hover:text-rose-500 text-gray-400'>
+            Forgot password?
+          </button>
+        </div>
         <div className='flex items-center pt-4 space-x-1'>
           <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
           <p className='px-3 text-sm dark:text-gray-400'>
-            Signup with social accounts
+            Login with social accounts
           </p>
           <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
         </div>
@@ -163,12 +134,12 @@ const SignUp = () => {
           <p>Continue with Google</p>
         </div>
         <p className='px-6 text-sm text-center text-gray-400'>
-          Already have an account?{' '}
+          Don&apos;t have an account yet?{' '}
           <Link
-            to='/login'
+            to='/signup'
             className='hover:underline hover:text-rose-500 text-gray-600'
           >
-            Login
+            Sign up
           </Link>
           .
         </p>
@@ -177,4 +148,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default SignIn

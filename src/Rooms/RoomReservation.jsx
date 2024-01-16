@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-// import { formatDistance } from 'date-fns'
+import { formatDistance } from 'date-fns'
 import Button from '../Shared/Button'
 import Calender from './Calender'
 // import { useState } from 'react'
@@ -12,13 +12,13 @@ const RoomReservation = ({ room }) => {
   //   })
 
   //   Total days * price
-  //   const totalDays = parseInt(
-  //     formatDistance(new Date(room?.to), new Date(room?.from)).split(' ')[0]
-  //   )
+    const totalDays = parseInt(
+      formatDistance(new Date(room?.to), new Date(room?.from)).split(' ')[0]
+    )
   // Total Price Calculation
-  //   const totalPrice = totalDays * room?.price
+    const totalPrice = totalDays * room?.price
 
-  //   console.log(value)
+    console.log(totalPrice)
 
   return (
     <div className='rounded-xl border-[1px] border-neutral-200 overflow-hidden bg-white'>

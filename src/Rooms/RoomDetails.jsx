@@ -35,7 +35,7 @@ const RoomDetails = () => {
             <RoomInfo room={room}/>
              {/* Calender */}
              <div className=' col-span-2 order-first md:order-last'>
-              <RoomReservation/>
+              <RoomReservation room={room}/>
              </div>
         </div>
        

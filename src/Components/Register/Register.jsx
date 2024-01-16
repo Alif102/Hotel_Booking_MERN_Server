@@ -29,6 +29,7 @@ const Register = () => {
     console.log(image)
     const imageData = await imageUpload(image)
     console.log(imageData)
+    const picc = imageData?.data?.display_url;
     // const formData = new FormData()
     // formData.append('image', image)
 
@@ -56,7 +57,7 @@ const Register = () => {
    createUser(email,password,name,imageData?.data?.display_url)
    .then(result => {
     console.log(result.user);
-    const user = {email};
+    const user = {email,password,name,picc};
     fetch('http://localhost:5000/user',{
       method: 'POST',
       headers: {

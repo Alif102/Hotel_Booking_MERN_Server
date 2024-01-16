@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react"
 import auth from "../Firebase/firebase.config";
 // import axios from 'axios';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { clearCookie } from "../api/Auth";
 const googleProvider = new GoogleAuthProvider();
 
 
@@ -14,7 +15,7 @@ const AuthProvider = ({children}) => {
  
 
     // Google LogIn
-    const googleLogin = () => {
+    const signInWithGoogle = () => {
         setLoading(true)
         return signInWithPopup(auth, googleProvider)
 
@@ -30,11 +31,12 @@ const AuthProvider = ({children}) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth,email,password);
     }
-    const LogOut = () => {
+    const LogOut = async () => {
         setLoading(true)
+        await clearCookie();
         return signOut(auth);
     }
-    const handleUpdateProfile = (name, photo) => {
+    const updateUserProfile = (name, photo) => {
         return updateProfile(auth.currentUser, {
             displayName: name, photoURL: photo
         })
@@ -51,44 +53,15 @@ const AuthProvider = ({children}) => {
         }
     },[])
 
-    // useEffect( ()=> {
-    //     const unSubscribe =   onAuthStateChanged(auth, currentUser => {
-    //         const UserEmail = currentUser?.email || user?.email;
-    //         const loggedUser = {email : UserEmail }
-    //         setUser(currentUser)
-    //         setLoading(false);
-    //         if(currentUser){
-                
-    //             axios.post( 'https://backend-nine-liart.vercel.app/jwt', loggedUser, {withCredentials : true})
-    //             .then(res=> {
-    //                 console.log('token response', res.data)
-    //             })
-    //         }
-    //         else{
-    //             axios.post('https://backend-nine-liart.vercel.app/logout',loggedUser , {
-    //                 withCredentials: true
-    //             })
-    //             .then(res => {
-    //                 console.log(res.data);
-    //             })
-    //         }
-
-    //     })
-    //     return ()=> {
-    //         unSubscribe();
-    //     }
-
-    // } , [user?.email])
-
 
     const authentications = {
-        googleLogin,
+        signInWithGoogle,
         createUser,
         user,
         loading,
         signIn,
         LogOut,
-        handleUpdateProfile
+        updateUserProfile
     }
 
 

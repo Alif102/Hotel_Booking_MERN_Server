@@ -7,13 +7,12 @@ import Home from './Components/Home/Home.jsx'
 import Rooms from './Components/Rooms/Rooms.jsx'
 import AuthProvider from './Provider/AuthProvider.jsx'
 // import RoomDetails from './Components/Rooms/RoomDetails.jsx'
-import Login from './Components/Login/Login.jsx'
-import Register from './Components/Register/Register.jsx'
 import ErrorPage from './ErrorPage.jsx'
 import MyBooking from './Components/Bookings/MyBooking.jsx'
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx'
 import RoomDetails from './Rooms/RoomDetails.jsx'
 import SignUp from './Components/SignUp/SignUp.jsx'
+import SignIn from './Components/SignUp/SignIn.jsx'
 
 
 
@@ -50,15 +49,12 @@ const router = createBrowserRouter([
      
       {
         path: '/login',
-        element: <Login/>
+        element: <SignIn/>
       },
-      {
-        path: '/signup',
-        element: <SignUp/>
-      },
+      
       {
         path: '/register',
-        element: <Register/>
+        element: <SignUp/>
       }
     ]
   }
