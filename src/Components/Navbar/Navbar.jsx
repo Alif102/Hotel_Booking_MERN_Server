@@ -81,7 +81,13 @@ const Navbar = () => {
                                     <button className="btn btn-sm  btn-ghost">{user.displayName}</button>
 
                                 </li>
-                                <li to='/dashboard'>Dashboard</li>
+                                <li>  <Link to='/dashboard'>
+
+                                  <button  className="btn btn-sm  btn-ghost">
+
+                                   Dashboard</button> </Link>
+
+                                </li>
                                 <li>
 
                                     <button className="btn btn-sm  btn-ghost"

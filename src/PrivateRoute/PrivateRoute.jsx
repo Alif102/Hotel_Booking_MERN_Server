@@ -1,28 +1,15 @@
 /* eslint-disable react/prop-types */
-import { Navigate, useLocation } from "react-router-dom"
-import UseAuth from "../Hooks/UseAuth";
-// import UseAuth from "../Hooks/UseAuth"
+import { Navigate, useLocation } from 'react-router-dom'
+import UseAuth from '../Hooks/UseAuth'
+import Loader from '../Shared/Loader'
 
-const PrivateRoute = ({children}) => {
-    // const {user, loading} = UseAuth();
-    const {user, loading} = UseAuth();
-        const location = useLocation();
-
-
-        if (loading) 
-        {
-            return <h2 className="text-4xl text-center mt-10">Loading .......</h2>
-             
-        }
-    
-       if (user) 
-        {
-            return children
-            
-        }
-    return <Navigate state={location.pathname} to='/login'/>
-  
-  
+const PrivateRoute = ({ children }) => {
+  const { user, loading } = UseAuth()
+  const location = useLocation()
+  console.log(loading)
+  if (loading) return <Loader />
+  if (user) return children
+  return <Navigate to='/login' state={{ from: location }} replace='true' />
 }
 
-export default PrivateRoute 
+export default PrivateRoute

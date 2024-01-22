@@ -1,44 +1,47 @@
-import { useEffect } from "react";
-import { useState } from "react"
-import Cards from "./Cards";
-import Container from "../Shared/Container";
-import { useSearchParams } from "react-router-dom";
-import Heading from "../Shared/Heading";
+import { useEffect, useState } from 'react'
+import Container from '../Shared/Container'
+import { useSearchParams } from 'react-router-dom'
+import { getAllRooms } from '../api/rooms'
+import Loader from '../Shared/Loader'
+import Heading from '../Shared/Heading'
+import Cards from './Cards'
 
 const Rooms = () => {
-    const [params, setParams] = useSearchParams();
-    const category = params.get('category');
-    const [rooms,setRooms] = useState([]);
-    useEffect(()=> {
-        fetch('../../public/rooms.json')
-        .then(res=> res.json())
-        .then(data=> {
-            if(category){
-                const filterd = data.filter(room => room.category === category)
-                setRooms(filterd)
-            }
-            else{
-                setRooms(data)
-            }
-        }
-            )
+  const [rooms, setRooms] = useState([])
+  const [params, setParams] = useSearchParams()
+  const [loading, setLoading] = useState(false)
+  const category = params.get('category')
 
-    }, [category])
+  useEffect(() => {
+    setLoading(true)
+    getAllRooms().then(data => {
+      if (category) {
+        const filtered = data.filter(room => room.category === category)
+        setRooms(filtered)
+      } else setRooms(data)
+
+      setLoading(false)
+    })
+  }, [category])
+
+  if (loading) return <Loader />
   return (
     <Container>
-    {
-        rooms && rooms.length>0 ? <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-        {
-            rooms.map(room => (
-                <Cards key={room._id} room={room}/>
-            ))
-        }
-    </div>: 
-    <div className="flex itc justify-center mt-8">
-        <Heading center={true} title='No room Available in This category' 
-        subtitle='Please Select Another Category'></Heading>
-    </div>
-    }
+      {rooms && rooms.length > 0 ? (
+        <div className='pt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8'>
+          {rooms.map(room => (
+            <Cards key={room._id} room={room} />
+          ))}
+        </div>
+      ) : (
+        <div className='flex items-center justify-center min-h-[calc(100vh-300px)]'>
+          <Heading
+            center={true}
+            title='No Rooms Available In This Category!'
+            subtitle='Please Select Other Categories.'
+          />
+        </div>
+      )}
     </Container>
   )
 }
